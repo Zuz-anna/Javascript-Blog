@@ -1,12 +1,22 @@
 'use strict';
 
 function titleClickHandler(event){
-  console.log('Link was clicked!');
-  console.log(event);
+    console.log('Link was clicked!');
+    console.log(event);
+
+
 
   /* remove class 'active' from all article links  */
+    const activeLinks = document.querySelectorAll('.titles a.active'); //select all active links
+    
+    for(let activeLink of activeLinks){                                //remove class active from all article links   
+      activeLink.classList.remove('active');
+    }
+
+
 
   /* add class 'active' to the clicked link */
+  
 
   /* remove class 'active' from all articles */
 
@@ -20,5 +30,5 @@ function titleClickHandler(event){
 const links = document.querySelectorAll('.titles a');
 
 for(let link of links){
-  link.addEventListener('click', titleClickHandler);
+    link.addEventListener('click', titleClickHandler);
 }
