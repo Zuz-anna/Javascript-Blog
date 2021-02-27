@@ -54,7 +54,20 @@ function titleClickHandler(event){
 
 
 
+/* find the correct article using the selector (value of 'href' attribute) */
 
+  const articles = document.querySelectorAll(articleVisible);
+
+
+
+
+/* add class 'active' to the correct article */
+
+  for(let article of articles){
+    article.classList.add('active');
+
+  } 
+}
 
 const links = document.querySelectorAll('.titles a');
 
