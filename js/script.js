@@ -52,7 +52,7 @@ function titleClickHandler(event){
 
 /* find the correct article using the selector (value of 'href' attribute) */
 
-  const articles = document.querySelector(articleVisible);
+  const articles = document.querySelectorAll(articleVisible);
 
 
 
@@ -64,30 +64,6 @@ function titleClickHandler(event){
 
   } 
 
-
-
-//Rozwiązanie 2  
-
-/* get 'href' attribute from the clicked link */
-
-//const articleSlector = clickedElement.getAttribute('href');
-
-
-
-
-/* find the correct article using the selector (value of 'href' attribute) */
-
-//const articleVisible = document.querySelector(articleSlector);
-
-
-
-
-/* add class 'active' to the correct article */
-
-//articleVisible.classList.add('active');
-
-
-
 }
 
 
@@ -98,3 +74,5 @@ const links = document.querySelectorAll('.titles a');
 for(let link of links){
     link.addEventListener('click', titleClickHandler);
 }
+
+
