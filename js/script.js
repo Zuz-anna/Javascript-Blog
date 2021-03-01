@@ -1,14 +1,10 @@
 'use strict';
 
-
-
-
 function titleClickHandler(event){
 
   event.preventDefault();   //Disable default browser option for clicked links - go to ID
   
   const clickedElement = this;
-
 
 
 
@@ -23,12 +19,10 @@ function titleClickHandler(event){
 
 
 
-
 /* Add class 'active' to the clicked link */
 
   clickedElement.classList.add('active');
   
-
 
 
 /* Remove class 'active' from all articles */
@@ -49,11 +43,9 @@ function titleClickHandler(event){
 
 
 
-
 /* find the correct article using the selector (value of 'href' attribute) */
 
   const articles = document.querySelectorAll(articleVisible);
-
 
 
 
@@ -64,8 +56,27 @@ function titleClickHandler(event){
 
   } 
 
-}
+//Rozwiązanie 2  
 
+/* get 'href' attribute from the clicked link */
+
+//const articleSlector = clickedElement.getAttribute('href');
+
+
+
+
+/* find the correct article using the selector (value of 'href' attribute) */
+
+//const articleVisible = document.querySelector(articleSlector);
+
+
+
+
+/* add class 'active' to the correct article */
+
+//articleVisible.classList.add('active');
+
+}
 
 
 
@@ -74,5 +85,83 @@ const links = document.querySelectorAll('.titles a');
 for(let link of links){
     link.addEventListener('click', titleClickHandler);
 }
+
+
+
+
+
+
+
+
+
+
+
+const optArticleSelector = '.post';
+const optTitleSelector = '.post-title';
+const optTitleListSelector = '.titles';
+
+function generateTitleLinks(){
+  
+  console.log();
+
+
+
+
+  /* remove contents of titleList */
+
+  clearList();
+  
+
+  function clearList(){
+
+    const titleList = document.querySelector(optTitleListSelector);  //Why optTitle (not '.titles') - like in scss, you can change class names in html, and its not a problem!  
+    titleList.innerHTML = ''; 
+  
+  }
+
+
+
+
+  /* for each article */
+
+  const articles = document.querySelectorAll(optArticleSelector);
+  
+
+
+
+  /* get the article id */
+
+  const articleID = articles.getAttribute('id');
+
+
+
+
+  /* find the title element */  /* get the title from the title element */
+
+
+  const articleTitle = article.querySelector(optTitleSelector).innerHTML;
+
+
+
+
+  /* create HTML of the link */
+
+  const linkHTML = '<li><a href="#' + articleID + '"><span>' + articleTitle +  '</span></a></li>';
+
+  console.log();
+
+
+
+
+  /* insert link into titleList */
+  
+  titleList.innerHTML = titleList.innerHTML + linkHTML;
+
+}
+
+  generateTitleLinks();
+
+
+
 
 
