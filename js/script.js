@@ -9,8 +9,6 @@ function titleClickHandler(event){
   
   const clickedElement = this;
 
-  console.log('Link was clicked!');
-
 
 
 
@@ -19,9 +17,9 @@ function titleClickHandler(event){
   const activeLinks = document.querySelectorAll('.titles a.active'); //select all active links
     
   for(let activeLink of activeLinks){     //remove class active from all article links 
-  activeLink.classList.remove('active');
+    activeLink.classList.remove('active');
 
-}
+  }
 
 
 
@@ -29,8 +27,6 @@ function titleClickHandler(event){
 /* Add class 'active' to the clicked link */
 
   clickedElement.classList.add('active');
-
-  console.log('clickedElement:', clickedElement);
   
 
 
@@ -46,7 +42,7 @@ function titleClickHandler(event){
 
 
 
-
+//Rozwiązanie 1 
 /* get 'href' attribute from the clicked link */
 
   const articleVisible = clickedElement.getAttribute('href');
@@ -56,7 +52,7 @@ function titleClickHandler(event){
 
 /* find the correct article using the selector (value of 'href' attribute) */
 
-  const articles = document.querySelectorAll(articleVisible);
+  const articles = document.querySelector(articleVisible);
 
 
 
@@ -67,6 +63,31 @@ function titleClickHandler(event){
     article.classList.add('active');
 
   } 
+
+
+
+//Rozwiązanie 2  
+
+/* get 'href' attribute from the clicked link */
+
+//const articleSlector = clickedElement.getAttribute('href');
+
+
+
+
+/* find the correct article using the selector (value of 'href' attribute) */
+
+//const articleVisible = document.querySelector(articleSlector);
+
+
+
+
+/* add class 'active' to the correct article */
+
+//articleVisible.classList.add('active');
+
+
+
 }
 
 
