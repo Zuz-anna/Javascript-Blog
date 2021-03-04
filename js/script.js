@@ -146,7 +146,7 @@ function generateTitleLinks(){
   }
 
 
-  titleList.innerHTML = html;
+  titleList.innerHTML = html; //Wewnątrz konkretnego elementu wrzuca nam dany element
   
   
   const links = document.querySelectorAll('.titles a');
@@ -155,7 +155,7 @@ function generateTitleLinks(){
       link.addEventListener('click', titleClickHandler);
 
   }
-  
+
 }
 
 
