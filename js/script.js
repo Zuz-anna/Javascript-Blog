@@ -1,5 +1,7 @@
 'use strict';
 
+
+
 function titleClickHandler(event){
 
   event.preventDefault();   //Disable default browser option for clicked links - go to ID
@@ -8,7 +10,7 @@ function titleClickHandler(event){
 
 
 
-/* Remove class 'active' from all article links  */
+  /* Remove class 'active' from all article links  */
   
   const activeLinks = document.querySelectorAll('.titles a.active'); //select all active links
     
@@ -19,13 +21,13 @@ function titleClickHandler(event){
 
 
 
-/* Add class 'active' to the clicked link */
+  /* Add class 'active' to the clicked link */
 
   clickedElement.classList.add('active');
   
 
 
-/* Remove class 'active' from all articles */
+  /* Remove class 'active' from all articles */
 
   const activeArticles = document.querySelectorAll('.posts article.active');
 
@@ -36,21 +38,18 @@ function titleClickHandler(event){
 
 
 
-//Rozwiązanie 1 
-/* get 'href' attribute from the clicked link */
-
+  //Rozwiązanie 1 
+  /* get 'href' attribute from the clicked link */
   const articleVisible = clickedElement.getAttribute('href');
 
 
 
-/* find the correct article using the selector (value of 'href' attribute) */
-
+  /* find the correct article using the selector (value of 'href' attribute) */
   const articles = document.querySelectorAll(articleVisible);
 
 
 
-/* add class 'active' to the correct article */
-
+  /* add class 'active' to the correct article */
   for(let article of articles){
     article.classList.add('active');
 
@@ -64,11 +63,9 @@ function titleClickHandler(event){
 
 
 
-
 /* find the correct article using the selector (value of 'href' attribute) */
 
 //const articleVisible = document.querySelector(articleSlector);
-
 
 
 
@@ -81,6 +78,7 @@ function titleClickHandler(event){
 
 
 const links = document.querySelectorAll('.titles a');
+console.log('links');
 
 for(let link of links){
     link.addEventListener('click', titleClickHandler);
@@ -100,38 +98,38 @@ const optArticleSelector = '.post';
 const optTitleSelector = '.post-title';
 const optTitleListSelector = '.titles';
 
+
+
+
 function generateTitleLinks(){
   
-  console.log();
-
-
 
 
   /* remove contents of titleList */
-
-  clearList();
+  const titleList = document.querySelector(optTitleListSelector);  //Why optTitle (not '.titles') - like in scss, you can change class names in html, and its not a problem!  
   
+  clearList();
 
   function clearList(){
-
-    const titleList = document.querySelector(optTitleListSelector);  //Why optTitle (not '.titles') - like in scss, you can change class names in html, and its not a problem!  
     titleList.innerHTML = ''; 
   
   }
 
 
 
+  /* find all the articles and save them to variable: articles*/
 
-  /* for each article */
+  const articles = document.querySelectorAll(optArticleSelector);
+  
 
-  const articles = document.querySelector(optArticleSelector);
-  
-  
+  let html = '';
+
   
   for(let article of articles){
+
     
     /* get the article id */
-    const articleID = articles.getAttribute('.post');
+    const articleID = article.getAttribute('id');
 
 
     /* find the title element */  /* get the title from the title element */
@@ -141,13 +139,23 @@ function generateTitleLinks(){
     /* create HTML of the link */
     const linkHTML = '<li><a href="#' + articleID + '"><span>' + articleTitle +  '</span></a></li>';
 
-    console.log();
-
 
     /* insert link into titleList */
-    titleList.innerHTML = titleList.innerHTML + linkHTML;
+    html = html + linkHTML;
 
   }
+
+
+  titleList.innerHTML = html;
+  
+  
+  const links = document.querySelectorAll('.titles a');
+  
+  for(let link of links){
+      link.addEventListener('click', titleClickHandler);
+
+  }
+  
 }
 
 
