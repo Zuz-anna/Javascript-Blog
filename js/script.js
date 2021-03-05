@@ -147,10 +147,11 @@ function generateTags(){
     let html = '';
 
     /* get tags from data-tags attribute */
-    const tagName = article.getAttribute('data-tags');
-    console.log(tagName);
-    /* split tags into array */
+    const tagsNames = article.getAttribute('data-tags');
 
+    /* split tags into array */
+    const tagArray = tagsNames.split(' ');
+    console.log(tagArray);
     /* START LOOP: for each tag */
 
       /* generate HTML of the link */
