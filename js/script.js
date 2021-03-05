@@ -95,7 +95,6 @@ function generateTitleLinks(){
   }
 
 
-
   /* find all the articles and save them to variable: articles*/
   const articles = document.querySelectorAll(optArticleSelector);
 
@@ -117,7 +116,6 @@ function generateTitleLinks(){
 
   }
 
-
   titleList.innerHTML = html; //Wewnątrz konkretnego elementu wrzuca nam dany element
 
   const links = document.querySelectorAll('.titles a');
@@ -137,16 +135,15 @@ generateTitleLinks();
 
 function generateTags(){
 
-
   /* find all articles */
   const articles = document.querySelectorAll(optArticleSelector);
 
   /* START LOOP: for every article: */
   for(let article of articles){
 
-  /* find tags wrapper */
-  const tagsWrapper = document.querySelectorAll(optArticleTagsSelector);
-  console.log(tagsWrapper);
+    /* find tags wrapper */
+    const tagsWrapper = document.querySelectorAll(optArticleTagsSelector);
+    console.log(tagsWrapper);
 
     /* make html variable with empty string */
 
