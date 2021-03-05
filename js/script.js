@@ -146,6 +146,7 @@ function generateTags(){
     console.log(tagsWrapper);
 
     /* make html variable with empty string */
+    let html = '';
 
     /* get tags from data-tags attribute */
 
