@@ -142,14 +142,13 @@ function generateTags(){
   for(let article of articles){
 
     /* find tags wrapper */
-    const tagsWrapper = document.querySelectorAll(optArticleTagsSelector);
-    console.log(tagsWrapper);
-
+    const tagsWrapper = document.querySelector(optArticleTagsSelector);
     /* make html variable with empty string */
     let html = '';
 
     /* get tags from data-tags attribute */
-
+    const tagName = article.getAttribute('data-tags');
+    console.log(tagName);
     /* split tags into array */
 
     /* START LOOP: for each tag */
