@@ -181,6 +181,10 @@ function tagClickHandler(event){
   }
   /* END LOOP: for each found tag link */
 
+  /* find all tag links with "href" attribute equal to the "href" constant */
+  const tagsLink = document.querySelectorAll('a[href="' + href + '"]');
+
+
   /* execute function "generateTitleLinks" with article selector as argument */
 }
 
