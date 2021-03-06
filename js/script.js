@@ -8,8 +8,6 @@ function titleClickHandler(event){
 
   const clickedElement = this;
 
-
-
   /* Remove class 'active' from all article links  */
   const activeLinks = document.querySelectorAll('.titles a.active'); //select all active links
 
@@ -18,12 +16,8 @@ function titleClickHandler(event){
 
   }
 
-
-
   /* Add class 'active' to the clicked link */
   clickedElement.classList.add('active');
-
-
 
   /* Remove class 'active' from all articles */
   const activeArticles = document.querySelectorAll('.posts article.active');
@@ -33,18 +27,12 @@ function titleClickHandler(event){
 
   }
 
-
-
   //Rozwiązanie 1
   /* get 'href' attribute from the clicked link */
   const articleVisible = clickedElement.getAttribute('href');
 
-
-
   /* find the correct article using the selector (value of 'href' attribute) */
   const articles = document.querySelectorAll(articleVisible);
-
-
 
   /* add class 'active' to the correct article */
   for(let article of articles){
@@ -52,18 +40,14 @@ function titleClickHandler(event){
 
   }
 
-
-
   //Rozwiązanie 2
 
   /* get 'href' attribute from the clicked link */
   //const articleSlector = clickedElement.getAttribute('href');
 
 
-
   /* find the correct article using the selector (value of 'href' attribute) */
   //const articleVisible = document.querySelector(articleSlector);
-
 
 
   /* add class 'active' to the correct article */
@@ -83,7 +67,6 @@ const optArticleTagsSelector = '.post-tags .list';
 
 function generateTitleLinks(){
 
-
   /* remove contents of titleList */
   const titleList = document.querySelector(optTitleListSelector);  //Why optTitle (not '.titles') - like in scss, you can change class names in html, and its not a problem!
 
@@ -93,7 +76,6 @@ function generateTitleLinks(){
     titleList.innerHTML = '';
 
   }
-
 
   /* find all the articles and save them to variable: articles*/
   const articles = document.querySelectorAll(optArticleSelector);
@@ -124,12 +106,10 @@ function generateTitleLinks(){
     link.addEventListener('click', titleClickHandler);
 
   }
+
 }
 
-
-
 generateTitleLinks();
-
 
 
 
@@ -156,22 +136,21 @@ function generateTags(){
       /* START LOOP: for each tag */
       for(let tag of tags){
 
-      /* generate HTML of the link */
-      const linkHTML = '<li><a href ="#">' + tag + '</a></li>';
+        /* generate HTML of the link */
+        const linkHTML = '<li><a href ="#tag-' + tag + '">' + tag + '</a></li>';
 
-      /* add generated code to html variable */
-      html = html + linkHTML;
+        /* add generated code to html variable */
+        html = html + linkHTML;
 
-    }
-
-    tagsWrapper.innerHTML = html;
-    console.log(tagsWrapper);
-    /* END LOOP: for each tag */
+      }
 
     /* insert HTML of all the links into the tags wrapper */
+    tagsWrapper.innerHTML = html;
 
-  /* END LOOP: for every article: */
   }
 }
 
 generateTags();
+
+
+
