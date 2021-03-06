@@ -172,6 +172,9 @@ function tagClickHandler(event){
   /* find all tag links with class active */
   const tagsActive = document.querySelectorAll('a.active[href^="#tag-"]');
 
+  /* START LOOP: for each active tag link */
+  for(let tagActive of tagsActive){
+
   /* END LOOP: for each found tag link */
 
   /* execute function "generateTitleLinks" with article selector as argument */
