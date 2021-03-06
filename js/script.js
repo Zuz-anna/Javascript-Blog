@@ -175,6 +175,10 @@ function tagClickHandler(event){
   /* START LOOP: for each active tag link */
   for(let tagActive of tagsActive){
 
+    /* remove class active */
+    tagActive.classList.remove('active');
+
+  }
   /* END LOOP: for each found tag link */
 
   /* execute function "generateTitleLinks" with article selector as argument */
