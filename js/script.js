@@ -65,7 +65,7 @@ const optArticleTagsSelector = '.post-tags .list';
 
 
 
-function generateTitleLinks(){
+function generateTitleLinks(customSelector = ''){
 
   /* remove contents of titleList */
   const titleList = document.querySelector(optTitleListSelector);  //Why optTitle (not '.titles') - like in scss, you can change class names in html, and its not a problem!
@@ -78,7 +78,7 @@ function generateTitleLinks(){
   }
 
   /* find all the articles and save them to variable: articles*/
-  const articles = document.querySelectorAll(optArticleSelector);
+  const articles = document.querySelectorAll(optArticleSelector + customSelector);
 
   let html = '';
 
@@ -166,8 +166,8 @@ function tagClickHandler(event){
   const href = clickedElement.getAttribute('href');
 
   /* make a new constant "tag" and extract tag from the "href" constant */
-  const tag = document.querySelectorAll(href);
-  console.log(tag);
+  //const tag = document.querySelectorAll(href); - first idea
+  const tag = href.replace('#tag-', '');
 
   /* find all tag links with class active */
   const tagsActive = document.querySelectorAll('a.active[href^="#tag-"]');
@@ -192,20 +192,24 @@ function tagClickHandler(event){
 
   }
 
-  }
   /* execute function "generateTitleLinks" with article selector as argument */
+  generateTitleLinks('data-tags~="' + tag + '"]');
 }
 
 
 
 function addClickListenersToTags(){
+
   /* find all links to tags */
+  const links = document.querySelectorAll('.post-tags .list li');
 
   /* START LOOP: for each link */
+  for(let link of links){
 
     /* add tagClickHandler as event listener for that link */
+    link.addEventListener('click', tagClickHandler);
+  }
 
-  /* END LOOP: for each link */
 }
 
 addClickListenersToTags();
