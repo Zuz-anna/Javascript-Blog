@@ -230,6 +230,7 @@ function generateAuthor(){
     const authorWrapper = article.querySelector(optArticleAuthorSelector);
 
     /* make html variable with empty string */
+    let html = '';
 
     /* get author from data-author attribute */
 
