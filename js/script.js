@@ -62,6 +62,7 @@ const optArticleSelector = '.post';
 const optTitleSelector = '.post-title';
 const optTitleListSelector = '.titles';
 const optArticleTagsSelector = '.post-tags .list';
+const optArticleAuthorSelector = '.post .post-author';
 
 
 
@@ -220,14 +221,23 @@ addClickListenersToTags();
 function generateAuthor(){
 
   /* find all articles */
+  const articles = document.querySelectorAll(optArticleSelector);
 
-  /* START LOOP: for every article: */
-  /* find author wrapper */
-  /* make html variable with empty string */
-  /* get author from data-author attribute */
-  /* generate HTML of the author */
-  /* add generated code to html variable */
-  /* insert HTML of link into the author wrapper */
+
+    /* make html variable with empty string */
+
+    /* get author from data-author attribute */
+
+    /* generate HTML of the author */
+
+    /* add generated code to html variable */
+
+    /* insert HTML of link into the author wrapper */
+
+    /* END LOOP: for every article */
+  }
+
+
 }
 
 generateAuthor();
