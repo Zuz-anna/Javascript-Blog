@@ -223,6 +223,11 @@ function generateAuthor(){
   /* find all articles */
   const articles = document.querySelectorAll(optArticleSelector);
 
+  /* START LOOP: for every article: */
+  for(let article of articles){
+
+    /* find author wrapper */
+    const authorWrapper = article.querySelector(optArticleAuthorSelector);
 
     /* make html variable with empty string */
 
