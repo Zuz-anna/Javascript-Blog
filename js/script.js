@@ -214,3 +214,20 @@ function addClickListenersToTags(){
 
 addClickListenersToTags();
 
+
+
+
+function generateAuthor(){
+
+  /* find all articles */
+
+  /* START LOOP: for every article: */
+  /* find author wrapper */
+  /* make html variable with empty string */
+  /* get author from data-author attribute */
+  /* generate HTML of the author */
+  /* add generated code to html variable */
+  /* insert HTML of link into the author wrapper */
+}
+
+generateAuthor();
