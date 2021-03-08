@@ -168,7 +168,6 @@ function tagClickHandler(event){
   /* make a new constant "tag" and extract tag from the "href" constant */
   //const tag = document.querySelectorAll(href); //- first idea
   const tag = href.replace('#tag-', '');
-  console.log(tag);
 
   /* find all tag links with class active */
   const tagsActive = document.querySelectorAll('a.active[href^="#tag-"]');
@@ -194,7 +193,7 @@ function tagClickHandler(event){
   }
 
   /* execute function "generateTitleLinks" with article selector as argument */
-  generateTitleLinks('data-tags~="' + tag + '"]');
+  generateTitleLinks('[data-tags~="' + tag + '"]');
 }
 
 
@@ -202,7 +201,7 @@ function tagClickHandler(event){
 function addClickListenersToTags(){
 
   /* find all links to tags */
-  const links = document.querySelectorAll('.post-tags .list');
+  const links = document.querySelectorAll('.post-tags a');
 
   /* START LOOP: for each link */
   for(let link of links){
