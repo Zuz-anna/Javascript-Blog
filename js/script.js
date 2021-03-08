@@ -234,6 +234,7 @@ function generateAuthor(){
 
     /* get author from data-author attribute */
 
+
     /* generate HTML of the author */
 
     /* add generated code to html variable */
