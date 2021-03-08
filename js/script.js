@@ -233,7 +233,7 @@ function generateAuthor(){
     let html = '';
 
     /* get author from data-author attribute */
-
+    const authorName = article.getAttribute('data-author');
 
     /* generate HTML of the author */
 
