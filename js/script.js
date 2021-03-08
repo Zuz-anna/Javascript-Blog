@@ -62,7 +62,7 @@ const optArticleSelector = '.post';
 const optTitleSelector = '.post-title';
 const optTitleListSelector = '.titles';
 const optArticleTagsSelector = '.post-tags .list';
-const optArticleAuthorSelector = '.post .post-author';
+const optArticleAuthorSelector = '.post';
 
 
 
@@ -236,14 +236,15 @@ function generateAuthor(){
     const authorName = article.getAttribute('data-author');
 
     /* generate HTML of the author */
+    const linkHTML = '<p class="post-author">' + authorName + '</p>';
 
     /* add generated code to html variable */
+    html = html + linkHTML;
 
     /* insert HTML of link into the author wrapper */
-
+    authorWrapper.innerHTML = html;
     /* END LOOP: for every article */
   }
-
 
 }
 
