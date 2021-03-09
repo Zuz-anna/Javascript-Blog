@@ -305,7 +305,7 @@ function addClickListenersToAuthor(){
   for(let link of links){
 
     /* add tagClickHandler as event listener for that link */
-    link.addEventListener('click', tagClickHandler);
+    link.addEventListener('click', authorClickHandler);
 
   }
 
