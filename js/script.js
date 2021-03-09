@@ -264,13 +264,12 @@ function authorClickHandler(event){
 
   /* make a new constant "href" and read the attribute "href" of the clicked element */
   const href = clickedElement.getAttribute('href');
-  console.log(href);
   /* make a new constant "author" and extract tag from the "href" constant */
   const author = href.replace('#author-', '');
 
   /* find all author links with class active */
   const authorsActive = document.querySelectorAll('a.active[href^="#author-"]');
-console.log(authorAcctive);
+
   /* START LOOP: for each active author link */
   for(let authorActive of authorsActive){
 
@@ -279,8 +278,8 @@ console.log(authorAcctive);
 
   }
 
-  /* find all tag links with "href" attribute equal to the "href" constant */
-
+  /* find all author links with "href" attribute equal to the "href" constant */
+  const authorsLink = document.querySelectorAll('a[href="' + href + '"]');
 
   /* START LOOP: for each found tag link */
 
