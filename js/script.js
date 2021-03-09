@@ -243,6 +243,7 @@ function generateAuthor(){
     html = html + linkHTML;
 
     /* insert HTML of link into the author wrapper */
+    authorWrapper.innerHTML = html;
 
     /* END LOOP: for every article */
   }
