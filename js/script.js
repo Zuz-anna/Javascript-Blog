@@ -281,7 +281,7 @@ function authorClickHandler(event){
   /* find all author links with "href" attribute equal to the "href" constant */
   const authorsLink = document.querySelectorAll('a[href="' + href + '"]');
 
-  /* START LOOP: for each found tag link */
+  /* START LOOP: for each found author link */
   for(let authorLink of authorsLink){
 
     /* add class active */
@@ -289,8 +289,7 @@ function authorClickHandler(event){
 
   }
 
-
-  /* END LOOP: for each found tag link */
-
   /* execute function "generateTitleLinks" with article selector as argument */
+  generateTitleLinks('[data-author="' + author + '"]');
+
 }
