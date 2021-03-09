@@ -62,7 +62,7 @@ const optArticleSelector = '.post';
 const optTitleSelector = '.post-title';
 const optTitleListSelector = '.titles';
 const optArticleTagsSelector = '.post-tags .list';
-const optArticleAuthorSelector = '.post';
+const optArticleAuthorSelector = '.postgit -author';
 
 
 
@@ -165,7 +165,7 @@ function tagClickHandler(event){
 
   /* make a new constant "href" and read the attribute "href" of the clicked element */
   const href = clickedElement.getAttribute('href');
-  console.log(href);
+
   /* make a new constant "tag" and extract tag from the "href" constant */
   //const tag = document.querySelectorAll(href); //- first idea
   const tag = href.replace('#tag-', '');
@@ -236,13 +236,14 @@ function generateAuthor(){
     const authorName = article.getAttribute('data-author');
 
     /* generate HTML of the author */
+    //const linkHTML = '<p class="post-author">' + authorName + '</p>';
     const linkHTML = '<p class="post-author">' + authorName + '</p>';
 
     /* add generated code to html variable */
     html = html + linkHTML;
 
     /* insert HTML of link into the author wrapper */
-    authorWrapper.innerHTML = html;
+
     /* END LOOP: for every article */
   }
 
