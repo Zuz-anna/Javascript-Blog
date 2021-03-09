@@ -62,7 +62,7 @@ const optArticleSelector = '.post';
 const optTitleSelector = '.post-title';
 const optTitleListSelector = '.titles';
 const optArticleTagsSelector = '.post-tags .list';
-const optArticleAuthorSelector = '.postgit -author';
+const optArticleAuthorSelector = '.post-author';
 
 
 
@@ -237,7 +237,7 @@ function generateAuthor(){
 
     /* generate HTML of the author */
     //const linkHTML = '<p class="post-author">' + authorName + '</p>';
-    const linkHTML = '<p class="post-author">' + authorName + '</p>';
+    const linkHTML = '<a href="#author-' + authorName + '" class="post-author">' + authorName + '</a>';
 
     /* add generated code to html variable */
     html = html + linkHTML;
@@ -251,3 +251,34 @@ function generateAuthor(){
 }
 
 generateAuthor();
+
+
+
+function authorClickHandler(event){
+
+  /* prevent default action for this event */
+
+  /* make new constant named "clickedElement" and give it the value of "this" */
+
+  /* make a new constant "href" and read the attribute "href" of the clicked element */
+
+  /* make a new constant "tag" and extract tag from the "href" constant */
+
+  /* find all tag links with class active */
+
+  /* START LOOP: for each active tag link */
+
+    /* remove class active */
+
+  /* END LOOP: for each active tag link */
+
+  /* find all tag links with "href" attribute equal to the "href" constant */
+
+  /* START LOOP: for each found tag link */
+
+    /* add class active */
+
+  /* END LOOP: for each found tag link */
+
+  /* execute function "generateTitleLinks" with article selector as argument */
+}
