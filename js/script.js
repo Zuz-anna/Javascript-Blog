@@ -282,8 +282,13 @@ function authorClickHandler(event){
   const authorsLink = document.querySelectorAll('a[href="' + href + '"]');
 
   /* START LOOP: for each found tag link */
+  for(let authorLink of authorsLink){
 
     /* add class active */
+    authorLink.classList.add('active');
+
+  }
+
 
   /* END LOOP: for each found tag link */
 
