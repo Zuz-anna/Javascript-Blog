@@ -293,3 +293,12 @@ function authorClickHandler(event){
   generateTitleLinks('[data-author="' + author + '"]');
 
 }
+
+
+
+function addClickListenersToAuthor(){
+
+  /* find all links to tags */
+  const links = document.querySelectorAll('.post-author a');
+
+}
