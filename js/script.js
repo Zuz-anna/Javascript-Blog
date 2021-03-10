@@ -63,6 +63,7 @@ const optTitleSelector = '.post-title';
 const optTitleListSelector = '.titles';
 const optArticleTagsSelector = '.post-tags .list';
 const optArticleAuthorSelector = '.post-author';
+const optTagsListSelector = '.tags.list'; //Dlaczego nie ma spacji między klasami i dlaczego są podane dwie?
 
 
 
@@ -312,3 +313,7 @@ function addClickListenersToAuthor(){
 }
 
 addClickListenersToAuthor();
+
+
+
+
