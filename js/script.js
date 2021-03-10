@@ -148,10 +148,13 @@ function generateTags(){
       html = html + linkHTML;
 
       /* check if this link is NOT already in allTags */
-      if(-1 == allTags.indexOf(linkHTML)){
+      if(!allTags.hasOwnProperty(tag)){
 
         /* add generated code to allTags array */
-        allTags.push(linkHTML);
+        allTags[tag] = 1;
+
+      } else {
+        allTags[tag]++;
 
       }
 
@@ -162,12 +165,12 @@ function generateTags(){
 
   }
 
-  /* [NEW] find list of tags in right column */
+  /* find list of tags in right column */
   const tagList = document.querySelector(optTagsListSelector);
-  console.log(tagList);
+  console.log(allTags);
 
-  /* [NEW] add html from allTags to tagList */
-  tagList.innerHTML = allTags.join(' ');
+  /* add html from allTags to tagList */
+  //tagList.innerHTML = allTags.join(' ');
 
 }
 
