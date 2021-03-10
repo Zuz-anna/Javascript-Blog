@@ -152,14 +152,22 @@ function generateTags(){
 
         /* add generated code to allTags array */
         allTags.push(linkHTML);
-        console.log(allTags);
+
       }
+
     }
 
     /* insert HTML of all the links into the tags wrapper */
     tagsWrapper.innerHTML = html;
 
   }
+
+  /* [NEW] find list of tags in right column */
+  const tagList = document.querySelector('.tags');
+
+  /* [NEW] add html from allTags to tagList */
+
+
 }
 
 generateTags();
