@@ -147,6 +147,13 @@ function generateTags(){
       /* add generated code to html variable */
       html = html + linkHTML;
 
+      /* check if this link is NOT already in allTags */
+      if(-1 == allTags.indexOf(linkHTML)){
+
+        /* add generated code to allTags array */
+        allTags.push(linkHTML);
+        console.log(allTags);
+      }
     }
 
     /* insert HTML of all the links into the tags wrapper */
