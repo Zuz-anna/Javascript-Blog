@@ -166,7 +166,7 @@ function generateTags(){
   const tagList = document.querySelector('.tags');
 
   /* [NEW] add html from allTags to tagList */
-
+  tagList.innerHTML = allTags.join(' ');
 
 }
 
