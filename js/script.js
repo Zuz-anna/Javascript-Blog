@@ -150,7 +150,7 @@ function generateTags(){
       /* check if this link is NOT already in allTags */
       if(!allTags.hasOwnProperty(tag)){
 
-        /* add generated code to allTags array */
+        /* add generated code to allTags object */
         allTags[tag] = 1;
 
       } else {
@@ -167,10 +167,21 @@ function generateTags(){
 
   /* find list of tags in right column */
   const tagList = document.querySelector(optTagsListSelector);
-  console.log(allTags);
 
-  /* add html from allTags to tagList */
-  //tagList.innerHTML = allTags.join(' ');
+  /* create variable for all links HTML code */
+  let allTagsHTML = '';
+
+  /* START LOOP: for each tag in allTags: */
+  for(let tag in allTags){
+
+    /* generate code of a link and add it to allTagsHTML */
+    allTagsHTML += '<li><a href ="#tag-' + tag + '">' + tag + '</a></li>' + ' (' + allTags[tag] + ') ';
+
+  }
+
+  /* add html from allTagsHTML to tagList */
+  tagList.innerHTML = allTagsHTML;
+  console.log(tagList);
 
 }
 
