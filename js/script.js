@@ -64,7 +64,8 @@ const optTitleListSelector = '.titles';
 const optArticleTagsSelector = '.post-tags .list';
 const optArticleAuthorSelector = '.post-author';
 const optTagsListSelector = '.tags.list'; //Dlaczego nie ma spacji między klasami i dlaczego są podane dwie?
-
+const optCloudClassCount = 5;
+const optCloudClassPrefix = 'tag-size-';
 
 
 function generateTitleLinks(customSelector = ''){
@@ -113,6 +114,43 @@ function generateTitleLinks(customSelector = ''){
 
 generateTitleLinks();
 
+function calculateTagsParams(tags){
+
+  const params = {max: 0, min: 999999};
+
+  for(let tag in tags){
+
+    params.max = Math.max(tags[tag], params.max);
+
+    params.min = Math.min(tags[tag], params.min);
+
+  }
+
+  return params;
+
+}
+
+
+
+function calculateTagClass(count, params){
+
+  /*
+  const normalizedCount = count - params.min;
+
+  const normalizedMax = params.max - params.min;
+
+  const percentage = normalizedCount / normalizedMax;
+
+  const classNumber = Math.floor(percentage * (optCloudClassCount - 1) + 1);
+  */
+
+  //skąd program wie, którą count jest liczbą (jaką ma wartość skoro nigdzie jej nie określaliśmy)
+
+  const classNumber = Math.floor(((count - params.min) / (params.max - params.min)) * optCloudClassCount + 1);
+
+  return optCloudClassPrefix + classNumber;
+
+}
 
 
 function generateTags(){
@@ -171,17 +209,21 @@ function generateTags(){
   /* create variable for all links HTML code */
   let allTagsHTML = '';
 
+  const tagsParams = calculateTagsParams(allTags);
+
   /* START LOOP: for each tag in allTags: */
   for(let tag in allTags){
 
+    const tagLinkHTML = calculateTagClass(allTags[tag], tagsParams);
+
     /* generate code of a link and add it to allTagsHTML */
-    allTagsHTML += '<li><a href ="#tag-' + tag + '">' + tag + '</a></li>' + ' (' + allTags[tag] + ') ';
+    allTagsHTML += '<li><a href="#tag-' + tag + '" class="' + tagLinkHTML + '">' + tag + '</a></li>';
+    console.log(allTagsHTML);
 
   }
 
   /* add html from allTagsHTML to tagList */
   tagList.innerHTML = allTagsHTML;
-  console.log(tagList);
 
 }
 
