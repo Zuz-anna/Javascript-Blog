@@ -340,6 +340,9 @@ function generateAuthor(){
   const authorList = document.querySelector(optAuthorsListSelector);
 
 
+  let allAuthorsHTML = '';
+
+  const authorsParams = calculateAuthorParams(allAuthors);
 
 
 
