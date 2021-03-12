@@ -1,5 +1,14 @@
 'use strict';
 
+const optArticleSelector = '.post';
+const optTitleSelector = '.post-title';
+const optTitleListSelector = '.titles';
+const optArticleTagsSelector = '.post-tags .list';
+const optArticleAuthorSelector = '.post-author';
+const optTagsListSelector = '.tags.list';
+const optCloudClassCount = 5;
+const optCloudClassPrefix = 'tag-size-';
+const optAuthorsListSelector = '.authors.list';
 
 
 function titleClickHandler(event){
@@ -55,17 +64,6 @@ function titleClickHandler(event){
 
 }
 
-
-
-
-const optArticleSelector = '.post';
-const optTitleSelector = '.post-title';
-const optTitleListSelector = '.titles';
-const optArticleTagsSelector = '.post-tags .list';
-const optArticleAuthorSelector = '.post-author';
-const optTagsListSelector = '.tags.list'; //Dlaczego nie ma spacji między klasami i dlaczego są podane dwie?
-const optCloudClassCount = 5;
-const optCloudClassPrefix = 'tag-size-';
 
 
 function generateTitleLinks(customSelector = ''){
@@ -302,6 +300,8 @@ addClickListenersToTags();
 
 
 function generateAuthor(){
+
+  let allAuthors = {};
 
   /* find all articles */
   const articles = document.querySelectorAll(optArticleSelector);
