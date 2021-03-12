@@ -325,6 +325,12 @@ function generateAuthor(){
     /* add generated code to html variable */
     html = html + linkHTML;
 
+    if(!allAuthors.hasOwnProperty(authorName)){  // eslint-disable-line no-prototype-builtins
+      allAuthors[authorName] = 1;
+    } else {
+      allAuthors[authorName]++;
+    }
+    console.log(allAuthors);
     /* insert HTML of link into the author wrapper */
     authorWrapper.innerHTML = html;
 
