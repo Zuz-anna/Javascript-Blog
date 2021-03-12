@@ -186,7 +186,7 @@ function generateTags(){
       html = html + linkHTML;
 
       /* check if this link is NOT already in allTags */
-      if(!allTags.hasOwnProperty(tag)){
+      if(!allTags.hasOwnProperty(tag)){  // eslint-disable-line no-prototype-builtins
 
         /* add generated code to allTags object */
         allTags[tag] = 1;
@@ -279,12 +279,19 @@ function addClickListenersToTags(){
 
   /* find all links to tags */
   const links = document.querySelectorAll('.post-tags a');
+  const cloudTagLinks = document.querySelectorAll('.tags.list a');
 
   /* START LOOP: for each link */
   for(let link of links){
 
     /* add tagClickHandler as event listener for that link */
     link.addEventListener('click', tagClickHandler);
+  }
+
+  for(let cloudTagLink of cloudTagLinks){
+
+    /* add tagClickHandler as event listener for that link */
+    cloudTagLink.addEventListener('click', tagClickHandler);
   }
 
 }
