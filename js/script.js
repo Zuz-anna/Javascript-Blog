@@ -330,12 +330,18 @@ function generateAuthor(){
     } else {
       allAuthors[authorName]++;
     }
-    console.log(allAuthors);
+
     /* insert HTML of link into the author wrapper */
     authorWrapper.innerHTML = html;
 
     /* END LOOP: for every article */
   }
+
+  const authorList = document.querySelector(optAuthorsListSelector);
+
+
+
+
 
 }
 
