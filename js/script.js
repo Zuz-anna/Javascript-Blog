@@ -344,6 +344,8 @@ function generateAuthor(){
 
   const authorsParams = calculateAuthorParams(allAuthors);
 
+  const authorLinkHTML = calculateAuthorClass(allAuthors[authorName], authorParams);
+
 
 
 }
