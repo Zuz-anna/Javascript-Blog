@@ -1,7 +1,8 @@
 'use strict';
 
 const templates = {
-  articleLink: Handlebars.compile(document.querySelector('#template-article-link').innerHTML)
+  articleLink: Handlebars.compile(document.querySelector('#template-article-link').innerHTML),
+  tagLink: Handlebars.compile(document.querySelector('#template-tag-link').innerHTML),
 };
 
 const optArticleSelector = '.post';
@@ -121,7 +122,8 @@ function generateTags() {
     const tags = tagsNames.split(' ');
 
     for (let tag of tags) {
-      const linkHTML = `<li><a href ="#tag-${ tag }">${ tag }</a></li>`;
+      const linkHTMLdata = {id: tag, title: tag};
+      const linkHTML =  templates.tagLink(linkHTMLdata);
 
       html = html + linkHTML;
 
