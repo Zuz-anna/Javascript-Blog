@@ -3,6 +3,7 @@
 const templates = {
   articleLink: Handlebars.compile(document.querySelector('#template-article-link').innerHTML),
   tagLink: Handlebars.compile(document.querySelector('#template-tag-link').innerHTML),
+  authorLink:  Handlebars.compile(document.querySelector('#template-author-link').innerHTML)
 };
 
 const optArticleSelector = '.post';
@@ -122,8 +123,9 @@ function generateTags() {
     const tags = tagsNames.split(' ');
 
     for (let tag of tags) {
-      const linkHTMLdata = {id: tag, title: tag};
-      const linkHTML =  templates.tagLink(linkHTMLdata);
+      const linkHTMLData = {id: tag, title: tag};
+      const linkHTML =  templates.tagLink(linkHTMLData);
+      console.log(linkHTML);
 
       html = html + linkHTML;
 
@@ -229,7 +231,8 @@ function generateAuthor() {
   for (let article of articles) {
     const authorWrapper = article.querySelector(optArticleAuthorSelector);
     const authorName = article.getAttribute('data-author');
-    const linkHTML = `<a href="#author-${ authorName }" class="post-author">${ authorName }</a>`;
+    const linkHTMLData = {id: authorName, title: authorName};
+    const linkHTML = templates.authorLink(linkHTMLData);
     let html = '';
 
     html = html + linkHTML;
