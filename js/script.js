@@ -62,7 +62,8 @@ function generateTitleLinks (customSelector = '') {
   for (let article of articles) {
     const articleID = article.getAttribute('id');
     const articleTitle = article.querySelector(optTitleSelector).innerHTML;
-    const linkHTML = `<li><a href="#${ articleID }"><span>${ articleTitle }</span></a></li>`;
+    const linkHTMLData = {id: articleID, title: articleTitle};
+    const linkHTML = templates.articleLink(linkHTMLData);
 
     html = html + linkHTML;
   }
